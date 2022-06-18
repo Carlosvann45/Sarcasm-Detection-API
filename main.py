@@ -31,7 +31,7 @@ def run_sarcasm_check():
     data = cv.transform([phrase]).toarray()
     output = model.predict(data)
 
-    return output
+    return output[0]
 
 
 if __name__ == '__main__':
