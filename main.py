@@ -41,9 +41,9 @@ def run_sarcasm_check():
                  'error': 'Server Unavailable',
                  'error message': err}
 
-        return Response(error, status=503)
+        return jsonify(error), 503
 
-    return jsonify(answer)
+    return jsonify(answer), 200
 
 
 if __name__ == '__main__':
