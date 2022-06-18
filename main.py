@@ -38,7 +38,7 @@ def run_sarcasm_check():
     except BaseException as err:
         error = {'timestamp': datetime.datetime.now(),
                  'code': 503,
-                 'error': 'Server Unavailable',
+                 'error type': 'Server Unavailable',
                  'error message': err}
 
         return jsonify(error), 503
