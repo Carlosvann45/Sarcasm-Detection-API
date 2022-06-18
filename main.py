@@ -15,7 +15,7 @@ def run_sarcasm_check():
     phrase = json_data['phrase']
 
     # Trains model on api load
-    data = pd.read_json("Sarcasm.json", lines=True)
+    data = pd.read_json("Sarcasm2.json", lines=True)
     data["is_sarcastic"] = data["is_sarcastic"].map({0: "Not Sarcasm", 1: "Sarcasm"})
     data = data[["headline", "is_sarcastic"]]
     x = np.array(data["headline"])
