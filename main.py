@@ -1,4 +1,5 @@
 from flask import *
+import datetime
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
@@ -35,8 +36,12 @@ def run_sarcasm_check():
         answer = {'answer': output[0]}
 
     except BaseException as err:
-        print(err)
-        return Response('Server Unavailable', status=503)
+        error = {'timestamp': datetime.datetime.now(),
+                 'code': 503,
+                 'error': 'Server Unavailable',
+                 'error message': err}
+
+        return Response(error, status=503)
 
     return jsonify(answer)
 
