@@ -3,3 +3,4 @@ pandas~=1.4.2
 numpy~=1.22.4
 scikit-learn~=1.1.1
 gunicorn
+status~=0.2.5
