@@ -11,8 +11,9 @@ app = Flask(__name__)
 
 @app.route('/containsSarcasm', methods=['POST'])
 def run_sarcasm_check():
-    phrase = request.get_json()['phrase']
-
+    json_data = request.get_json()
+    phrase = json_data['phrase']
+    
     # Trains model on api load
     data = pd.read_json("Sarcasm.json", lines=True)
     data = data[["headline", "is_sarcastic"]]
