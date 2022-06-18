@@ -28,7 +28,7 @@ def run_sarcasm_check():
     model.fit(x_train, y_train)
 
     # checks trained model with phrase sent through request
-    data = cv.transform(phrase).toarray()
+    data = cv.transform([phrase]).toarray()
     output = model.predict(data)
 
     return output
