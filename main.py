@@ -1,4 +1,3 @@
-import status as status
 from flask import *
 import pandas as pd
 import numpy as np
